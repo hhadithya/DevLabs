@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 async function predictUsingAzureML(data) {
-    const endpointUrl = 'http://3c9664cc-3348-4882-8528-135b179813f6.southeastasia.azurecontainer.io/score';
+    const endpointUrl = `${process.env.MODEL_URL}`;
     const apiKey = `${process.env.AZURE_ML_API_KEY}`; // If authentication is required
     
     const response = await fetch(endpointUrl, {
